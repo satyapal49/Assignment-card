@@ -329,152 +329,115 @@ a {
   margin-top: 6px;
   cursor: pointer;
 }
-/* ...existing code... */
+/* ==== Responsive Enhancements ==== */
 
-/* Responsive Styles */
+/* Remove fixed overflow to allow body scrolling on mobile */
+body {
+  overflow-x: hidden !important;
+}
 
-/* Large laptops/desktops */
-@media (max-width: 1400px) {
+/* Reflow main layout on tablets and smaller screens */
+@media (max-width: 1200px) {
   .left-sibebar {
-    width: 16rem;
+    width: 13rem;
   }
   .Main-content {
-    margin-left: 18rem;
+    margin-left: 15rem;
   }
 }
 
-/* Standard laptops/tablets landscape */
-@media (max-width: 1024px) {
+/* Stack and simplify on laptops and tablets */
+@media (max-width: 900px) {
   .left-sibebar {
-    width: 12rem;
+    display: none;
   }
-  .Main-content {
-    margin-left: 13rem;
+  .Main-content, .container-2, .Main-content-menu1 {
+    margin-left: 0 !important;
+    padding: 0 0.8rem;
+    flex-direction: column !important;
+    gap: 1.2rem;
   }
   .Part1, .rightside {
-    width: 100%;
-  }
-  .container-2 {
-    flex-direction: column;
-  }
-  .newcontainer {
-    max-width: 100%;
-    margin: 0;
+    width: 100% !important;
   }
 }
 
-/* Tablets portrait and small laptops */
-@media (max-width: 800px) {
-  .left-sibebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-    margin-right: 0;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 10;
-  }
-  .Main-content {
-    margin-left: 0;
-    margin-top: 2.5rem;
-    padding: 0 0.5rem;
-  }
-  .container-2 {
-    flex-direction: column;
-  }
-  .Part1, .rightside {
-    width: 100%;
-  }
-  .search-bar {
-    width: 100%;
-    min-width: 0;
-  }
-  .card-table th, .card-table td {
-    padding: 10px;
-    font-size: 13px;
-  }
-  .virtual-card {
-    padding: 14px 8px 20px 8px;
-  }
-}
-
-/* Phones */
+/* Fully mobile-first: wide-to-narrow, better touch targets, and table scroll */
 @media (max-width: 600px) {
   body {
     font-size: 15px;
-    overflow: auto;
+    padding: 0;
+    margin: 0;
   }
-  .left-sibebar {
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-    margin-right: 0;
-    position: static;
+  .Main-content, .container-2, .newcontainer {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 4px !important;
+    box-sizing: border-box;
   }
-  .Main-content {
-    margin-left: 0;
-    margin-top: 1rem;
-    padding: 0 0.2rem;
+  .card-table {
+    font-size: 13px;
+    display: block;
+    overflow-x: auto;
+    width: 100% !important;
+    min-width: 400px;
+    background: #fafafa;
   }
-  .Main-content-menu1,
-  .sub-menu,
-  .card-header,
-  .card-actions,
-  .account-info,
-  .transactions-section {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 0 4px;
+  .card-table th, .card-table td {
+    padding: 9px 6px;
+    font-size: 13px;
   }
   .search-bar {
-    width: 100%;
-    min-width: 0;
-    font-size: 1rem;
+    width: 100% !important;
+    font-size: 14px;
+    margin-bottom: 0.7rem;
   }
   .btn {
     width: 100%;
-    margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: 15px;
+    padding: 12px 2px;
   }
-  .card-table th, .card-table td {
-    padding: 6px;
-    font-size: 12px;
+  .virtual-card, .transaction, .account-info {
+    border-radius: 10px !important;
+    margin: 0 0 12px 0;
+    padding: 12px 7px !important;
   }
-  .virtual-card {
-    padding: 10px 4px 14px 4px;
+  .card-header, .card-actions {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .card-number,
+  .visible-number,
+  .hidden-number {
+    font-size: 18px;
+  }
+  .reveal-btn {
+    font-size: 15px;
+    padding: 5px 13px;
+    right: 10px;
+    top: 30px;
+  }
+  .account-info, .transaction, .card-table, .virtual-card {
+    box-shadow: none !important;
+  }
+  .transactions-section {
+    padding: 0;
   }
   .transactions-title {
-    font-size: 13px;
-  }
-  .trans-desc {
-    font-size: 14px;
-  }
-  .trans-amount {
-    font-size: 15px;
-  }
-  .view-all {
-    font-size: 13px;
+    margin-bottom: 6px;
   }
 }
 
-/* Extra small devices (iPhone SE, etc.) */
+/* For extra small screens (max-width: 400px) */
 @media (max-width: 400px) {
-  .virtual-card {
-    padding: 6px 2px 8px 2px;
-  }
-  .card-number, .visible-number, .hidden-number {
-    font-size: 14px;
-  }
-  .card-tier, .main-label {
-    font-size: 14px;
-  }
-  .search-bar, .btn {
-    font-size: 0.9rem;
+  .Main-content, .virtual-card, .transaction,
+  .account-info, .newcontainer {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
 }
-
-/* ...existing code... */
-
 
