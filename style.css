@@ -590,14 +590,14 @@
                 width: 100%;
             }
             
-            .table-container {
+            /* .table-container {
                 overflow-x: auto;
-            }
+            } */
             
-            .card-table {
+            /* .card-table {
                 min-width: 400px;
                 font-size: 0.8rem;
-            }
+            } */
             
             .card-table th,
             .card-table td {
