@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card</title>
+    <title>Card Dashboard</title>
     <link rel="stylesheet" href="style.css">
-</head>
-
+    </head>
 <body>
     <div class="container">
-        <div class="left-sibebar">
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        
+        <div class="left-sidebar" id="sidebar">
             <h1>LOGO</h1>
-            <ul class="">
-                <li><img src="/menu.png" alt="icon" class="icon"><a href="#">Dashboard</a></li>
-                <li class="highlight-1"><img src="/menu.png" alt="icon" class="icon"><a href="#">Card</a></li>
-                <li><img src="/menu.png" alt="icon" class="icon"><a href="#">Accounts</a></li>
-                <li><img src="/menu.png" alt="icon" class="icon"><a href="#">Transaction</a></li>
+            <ul>
+                <li><span class="icon">📊</span><a href="#">Dashboard</a></li>
+                <li class="active"><span class="icon">💳</span><a href="#">Card</a></li>
+                <li><span class="icon">🏦</span><a href="#">Accounts</a></li>
+                <li><span class="icon">💰</span><a href="#">Transaction</a></li>
             </ul>
         </div>
-        <div class="Main-content">
-            <div class="Main-content-menu1">
-                <div class=>Card</div>
-                <div>
+        
+        <div class="main-content">
+            <div class="main-header">
+                <h2>Card</h2>
+                <div class="header-controls">
                     <input type="search" placeholder="Enter card name or number" class="search-bar">
-                    <button class="btn"><img src="/icon/search.png" alt="search icon"></button>
-                    <button class="btn">Account</button>
+                    <button class="btn">🔍</button>
+                    <button class="btn primary">Account</button>
                 </div>
             </div>
-            <div class="container-2">
-                <div class="Part1">
-                    <div class="sub-menu">
-                        <div class="card">
-                            <h3>Your cards</h3>
-                        </div>
-                        <div>
+            
+            <div class="content-wrapper">
+                <div class="main-section">
+                    <div class="section-header">
+                        <h3>Your cards</h3>
+                        <div class="section-controls">
                             <button class="btn">Orders</button>
-                            <button class="btn">Create a card</button>
+                            <button class="btn primary">Create a card</button>
                             <button class="btn">Filter</button>
                         </div>
                     </div>
-                    <div class="table">
+                    
+                    <div class="table-container">
                         <table class="card-table">
                             <thead>
                                 <tr>
@@ -53,12 +54,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="highlight-1">
+                                <tr class="highlight">
                                     <td>Primary</td>
                                     <td>Non-reloadable</td>
                                     <td>**** 7413</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
                                 <tr>
@@ -66,15 +67,15 @@
                                     <td>Physical</td>
                                     <td>**** 7413</td>
                                     <td>Connect4Dig</td>
-                                    <td>Closed</td>
+                                    <td class="status-closed">Closed</td>
                                     <td>$1,499.20</td>
                                 </tr>
-                                <tr class="highlight">
+                                <tr class="highlight1">
                                     <td>Primary</td>
                                     <td>Non-reloadable</td>
                                     <td>**** 7413</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
                                 <tr>
@@ -82,15 +83,15 @@
                                     <td>Physical</td>
                                     <td>**** 1123</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
-                                <tr class="highlight-1">
+                                <tr class="highlight">
                                     <td>Primary</td>
                                     <td>Non-reloadable</td>
                                     <td>**** 2783</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
                                 <tr>
@@ -98,15 +99,15 @@
                                     <td>Reloadable</td>
                                     <td>**** 1155</td>
                                     <td>Connect4Dig</td>
-                                    <td>Closed</td>
+                                    <td class="status-closed">Closed</td>
                                     <td>$0.00</td>
                                 </tr>
-                                <tr class="highlight-1">
+                                <tr class="highlight">
                                     <td>Primary</td>
                                     <td>Reloadable</td>
                                     <td>**** 2296</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
                                 <tr>
@@ -114,128 +115,130 @@
                                     <td>Non-reloadable</td>
                                     <td>**** 9909</td>
                                     <td>Connect4Dig</td>
-                                    <td>Active</td>
+                                    <td class="status-active">Active</td>
                                     <td>$1,499.20</td>
                                 </tr>
                             </tbody>
                         </table>
-                    
-                        </main>
                     </div>
-                    <div class="loadmore">
-                        <p class="load-btn">Load more</p>
+                    
+                    <div class="load-more">
+                        <button>Load more</button>
                     </div>
                 </div>
-                <div class="rightside">
-                    <div class="newcontainer">
-
-                        <!-- Card Section -->
-                        <div class="virtual-card">
-                            <div class="card-header">
-                                <div>
-                                    <span class="card-type-label">VIRTUAL</span>
-                                    <div class="card-tier">PLATINUM</div>
-                                </div>
-                                <span class="main-label">Main</span>
+                
+                <div class="right-sidebar">
+                    <div class="virtual-card">
+                        <div class="card-header">
+                            <div class="card-type-info">
+                                <h4>VIRTUAL</h4>
+                                <div class="card-tier">PLATINUM</div>
                             </div>
-                            <div class="card-number">
-                                <span class="visible-number">7413</span>
-                                <span class="hidden-number"> **** 9984 2207</span>
-                            </div>
-                            <button class="reveal-btn">Reveal</button>
+                            <span class="main-label">Main</span>
                         </div>
-
-                        <!-- Card Actions -->
-                        <div class="card-actions">
-                            <div class="action">
-                                <span class="action-icon">&#128337;</span>
-                                <div>Close</div>
-                            </div>
-                            <div class="action">
-                                <span class="action-icon">&#128337;</span>
-                                <div>Top up</div>
-                            </div>
-                            <div class="action">
-                                <span class="action-icon">&#128337;</span>
-                                <div>Set Pin</div>
-                            </div>
+                        <div class="card-number">
+                            7413 **** 9984 2207
                         </div>
-
-                        <!-- Account Info -->
-                        <div class="account-info">
-                            <div>
-                                <div class="label">Account</div>
-                                <div class="value account-name">XYZ NAme</div>
-                            </div>
-                            <div>
-                                <div class="label">Status</div>
-                                <div class="value status-active">
-                                    <span class="status-dot"></span> Active
-                                </div>
+                        <button class="reveal-btn">Reveal</button>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <div class="action">
+                            <div class="action-icon">🔒</div>
+                            <span>Close</span>
+                        </div>
+                        <div class="action">
+                            <div class="action-icon">💰</div>
+                            <span>Top up</span>
+                        </div>
+                        <div class="action">
+                            <div class="action-icon">🔐</div>
+                            <span>Set Pin</span>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <div class="info-item">
+                            <h4>Account</h4>
+                            <p>XYZ Name</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Status</h4>
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span>Active</span>
                             </div>
                         </div>
-
-                        <!-- Recent Transactions -->
-                        <div class="transactions-section">
-                            <div class="transactions-title">Recent Transactions</div>
-
-                            <div class="transaction">
-                                <img src="https://api.iconify.design/simple-icons/xero.svg?color=%23009eda"
-                                    class="trans-icon" alt="Xero Logo">
-                                <div class="trans-details">
-                                    <div class="trans-desc">Xero</div>
-                                    <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
-                                </div>
-                                <div class="trans-amount">$145</div>
+                    </div>
+                    
+                    <div class="transactions-section">
+                        <h3>Recent Transactions</h3>
+                        
+                        <div class="transaction">
+                            <div class="trans-icon">📊</div>
+                            <div class="trans-details">
+                                <div class="trans-desc">Xero</div>
+                                <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
                             </div>
-
-                            <div class="transaction">
-                                <img src="https://api.iconify.design/simple-icons/xero.svg?color=%23009eda"
-                                    class="trans-icon" alt="Xero Logo">
-                                <div class="trans-details">
-                                    <div class="trans-desc">Dunkin Donuts</div>
-                                    <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
-                                </div>
-                                <div class="trans-amount">$2.75</div>
-                            </div>
-
-                            <div class="transaction">
-                                <img src="https://api.iconify.design/simple-icons/xero.svg?color=%23009eda"
-                                    class="trans-icon" alt="Xero Logo">
-                                <div class="trans-details">
-                                    <div class="trans-desc">Xero</div>
-                                    <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
-                                </div>
-                                <div class="trans-amount">$145</div>
-                            </div>
-
-                            <div class="transaction">
-                                <img src="https://api.iconify.design/simple-icons/xero.svg?color=%23009eda"
-                                    class="trans-icon" alt="Xero Logo">
-                                <div class="trans-details">
-                                    <div class="trans-desc">Xero</div>
-                                    <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
-                                </div>
-                                <div class="trans-amount">$145</div>
-                            </div>
-
-                            <div class="transaction">
-                                <img src="https://api.iconify.design/simple-icons/xero.svg?color=%23009eda"
-                                    class="trans-icon" alt="Xero Logo">
-                                <div class="trans-details">
-                                    <div class="trans-desc">Xero</div>
-                                    <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
-                                </div>
-                                <div class="trans-amount">$145</div>
-                            </div>
-
-                            <div class="view-all">View All</div>
+                            <div class="trans-amount">$145</div>
                         </div>
+                        
+                        <div class="transaction">
+                            <div class="trans-icon">🍩</div>
+                            <div class="trans-details">
+                                <div class="trans-desc">Dunkin Donuts</div>
+                                <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
+                            </div>
+                            <div class="trans-amount">$2.75</div>
+                        </div>
+                        
+                        <div class="transaction">
+                            <div class="trans-icon">📊</div>
+                            <div class="trans-details">
+                                <div class="trans-desc">Xero</div>
+                                <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
+                            </div>
+                            <div class="trans-amount">$145</div>
+                        </div>
+                        
+                        <div class="transaction">
+                            <div class="trans-icon">📊</div>
+                            <div class="trans-details">
+                                <div class="trans-desc">Xero</div>
+                                <div class="trans-date">23 June, 09:06<br>Jersey, United Kingdom</div>
+                            </div>
+                            <div class="trans-amount">$145</div>
+                        </div>
+                        
+                        <div class="view-all">View All</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.getElementById('sidebar').classList.remove('active');
+            }
+        });
+    </script>
+</body>
 </html>
