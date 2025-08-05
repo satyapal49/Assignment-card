@@ -595,7 +595,7 @@
             }
             
             .card-table {
-                min-width: 600px;
+                min-width: 400px;
                 font-size: 0.8rem;
             }
             
@@ -701,4 +701,3 @@
             .card-table th {
                 background-color: #3d3d3d;
             }
-
